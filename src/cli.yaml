@@ -1,0 +1,37 @@
+name: tzar
+version: "0.1"
+author: PlastMAn420 @github
+about: Tiny Zip Archiver in Rust
+
+settings:
+    - ArgRequiredElseHelp
+
+args:
+    - input:
+        short: i
+        long: input
+        help: input file(s)
+        takes_value: true
+        multiple: true
+    - compress:
+        short: c
+        long: compress
+        possible_values: [ store, zstd, deflate ]
+        help: Choose a compression algorithm 
+        takes_value: true
+    - encrypt:
+        short: e
+        long: encrypt
+        about: Encrypt your archive using AES-512
+        value_name: password
+        takes_value: true
+    - split:
+        short: s
+        long: split
+        help: splits the output archive into smaller disks of a specific size
+        takes_value: true
+    - output:
+        short: o
+        long: output
+        help: output file name
+        takes_value: true
